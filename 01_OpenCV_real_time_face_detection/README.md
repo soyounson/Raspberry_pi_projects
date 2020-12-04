@@ -1,4 +1,4 @@
-:black_heart: Real-Time face recognition (detection) 
+## :black_heart: Real-Time face recognition (detection) 
 
 You can find all details from [Real-Time Face Recognition: An End-to-End Project (in English)](https://www.hackster.io/mjrobot/real-time-face-recognition-an-end-to-end-project-a10826) and [실시간 얼굴인식 카메라 (in Korean)](https://blog.naver.com/ljy9378/221438230814)
 To mount Raspberry camera and set up it, please check my [Raspberry_pi_setup](https://github.com/soyounson/Raspberry_Pi_setup) repository. You can run two python codes `test_photo.py` and `test_video.py` to check your camera. 
@@ -52,16 +52,18 @@ pi@raspberrypi: ~ $ python faceDetection.py
 To stop it, press `ESC`
 
 ### Dataset :bar_chart:
-make directory to save dataset (photos) and run python code
+Make directory to save dataset (photos) and run python code
+
 ```
 pi@raspberrypi: ~ $ mkdir dataset
 pi@raspberrypi: ~ $ python 01_face_dataset.py
 enter user id end press <return> ==>
 ```
-type id# and then take photos. Photos are saved in dataset folder
+Type id# and then take photos. Photos are saved in dataset folder
 
-### Training dataset 
-make directory to save a features file
+### Training dataset :hourglass_flowing_sand:
+
+Make directory to save a features file
 ```
 pi@raspberrypi: ~ $ mkdir trainer
 pi@raspberrypi: ~ $ python 02_face_training.py
@@ -69,7 +71,7 @@ pi@raspberrypi: ~ $ python 02_face_training.py
 train datasets in dataset directory using `recognizer.train(faces, np.array(ids))` and extract features and then save these features as a yaml file using `recognizer.write('trainer/trainer.yml')`
 Now, go to trainer directory and check the yaml file
 
-### Real-time face detection
+### Real-time face detection 
 Now, detect face using trained and extracted features `trainer.yml`
 ```
 pi@raspberrypi: ~ $ python 03_face_recognition.py
